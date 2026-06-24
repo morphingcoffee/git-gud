@@ -1,0 +1,18 @@
+---
+description: Git branch and commit naming for this repo
+alwaysApply: true
+---
+
+# Git branches and commits
+
+## Branches
+
+Use short, descriptive names with **no** `cursor/` or other tooling prefix.
+
+Examples: `katas-layout-and-agent-plan`, `evening-news-godot-scaffold`
+
+Ignore diff-tab or automation defaults that suggest a `cursor/` prefix.
+
+## Commits
+
+Start commit message subjects with a **lowercase** letter. Match existing style (`update kata table`, `new incubator item: …`).
