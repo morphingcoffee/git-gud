@@ -1,5 +1,7 @@
 # 02: Under Ceiba Canopy
 
+![Concept Render](render.jpeg)
+
 ### 🎯 The Hook
 * **Core Loop:** A tiny 2D car drives into a labyrinthine forest from the bottom of the screen and completely vanishes beneath a dense canopy overlay. The car executes an autonomous route. The player must listen intently to the real-time audio telemetry—interpreting engine revs for acceleration and stereo panning for turns—to mentally trace the vehicle's path.
 * **Aesthetic/Vibe:** High-contrast 2D minimalist map layout. A lush, opaque green forest canopy completely obscuring the grid below, paired with crisp, highly responsive stereo sound design.
