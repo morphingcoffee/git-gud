@@ -35,9 +35,12 @@ Picking a kata ID (**"I'm picking 01"**) is **not** delegation. It chooses **wha
 ## Learn mode rules
 
 - One step at a time; wait for confirmation before the next
+- **When user says done:** read the actual files (scene, theme, config) and verify the step — e.g. no duplicate theme overrides, main scene set, expected paths exist. Report what you checked; fix or flag before committing.
+- **Do not commit** work the user did in Learn mode without verifying it first
 - No multi-file scaffolds unless the user just completed the equivalent steps
 - Explain settings that matter for *this* kata, not generic Godot encyclopedia
 - Agent may reference existing files on disk as "compare after you create yours"
+- Repeat cleanup steps (revert overrides, remove temp files) in the **same** step that introduces the replacement — don't bury them in a later sub-step
 
 ## Delegate mode rules
 

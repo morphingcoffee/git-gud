@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://yrp4schnxk56"]
+
+[ext_resource type="Theme" uid="uid://uwaspkyrweqh" path="res://ui/dev_boot_theme.tres" id="1_6ypks"]
+
+[node name="Boot" type="Control" unique_id=564514489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6ypks")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1782849953]
+custom_minimum_size = Vector2(320, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -46.5
+offset_right = 86.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1559991556]
+layout_mode = 2
+text = "01 Evening News (dev)"
+
+[node name="GymDspBench" type="Button" parent="VBoxContainer" unique_id=1800954526]
+layout_mode = 2
+text = "Gym: DSP bench"
+
+[node name="Level" type="Button" parent="VBoxContainer" unique_id=1614638501]
+layout_mode = 2
+text = "Level"
