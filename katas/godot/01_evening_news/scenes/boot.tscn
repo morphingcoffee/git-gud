@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://yrp4schnxk56"]
 
 [ext_resource type="Theme" uid="uid://uwaspkyrweqh" path="res://ui/dev_boot_theme.tres" id="1_6ypks"]
+[ext_resource type="Script" uid="uid://chkiwua33q50" path="res://scenes/boot.gd" id="2_n61mk"]
 
 [node name="Boot" type="Control" unique_id=564514489]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6ypks")
+script = ExtResource("2_n61mk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1782849953]
 custom_minimum_size = Vector2(320, 120)
@@ -38,3 +40,5 @@ text = "Gym: DSP bench"
 [node name="Level" type="Button" parent="VBoxContainer" unique_id=1614638501]
 layout_mode = 2
 text = "Level"
+
+[connection signal="pressed" from="VBoxContainer/GymDspBench" to="." method="_on_gym_dsp_bench_pressed"]
