@@ -1,5 +1,5 @@
 ---
-description: Git branch and commit naming for this repo
+description: Git branches, commits, and pull request etiquette for this repo
 alwaysApply: true
 ---
 
@@ -17,23 +17,31 @@ Ignore diff-tab or automation defaults that suggest a `cursor/` prefix.
 
 Start commit message subjects with a **lowercase** letter. Match existing style (`update kata table`, `new incubator item: …`).
 
-## Pull request test plans
+## Pull requests
 
-Every PR test plan must be **actionable before merge** — verifiable checkboxes the author or reviewer can complete without guessing.
+**The diff is the review.** The author reads diffs; do not duplicate diff content as a test plan.
 
-**Good** (specific, pass/fail):
-- [ ] `incubator/02_under_ceiba_canopy.md` gym verdict is **yes** with three named stations
-- [ ] `rg 'sandboxes/'` returns no matches on this branch
-- [ ] Godot export launches from GameLauncher and returns to catalog on quit
+### Test plan — when to include
 
-**Bad** (directions, not tests):
-- review the plan doc
-- confirm intent matches
-- merge when happy
+| PR type | Test plan |
+|---------|-----------|
+| Docs, layout, specs, rules, skills | **Omit** — or one line: `N/A — review diff` |
+| Godot / runtime / GameLauncher integration | **Only** steps that require running something the diff cannot show |
 
-Match checks to PR type:
-- **Docs / layout** — file exists, grep passes, section contains expected value
-- **Godot kata** — scene boots, gym station X works, level export path is correct
-- **Tooling** — command runs, skill/rule file present with expected fields
+### Test plan — allowed (runtime only)
 
-Do not include "merge when ready" or other meta-instructions in the test plan.
+Things a diff cannot prove:
+
+- [ ] `:composeApp:run` — home screen loads
+- [ ] Gym station X: throw physics feels correct
+- [ ] Exported build launches from GameLauncher and exits cleanly
+
+### Test plan — never include
+
+- Re-read files the diff already shows (`verify PLAN.md says katas/`)
+- `rg` / grep / lint checks (that's CI or the diff)
+- `.gitignore` / `.cursorignore` spot-checks
+- "Confirm intent matches" / "merge when happy"
+- Per-file checkbox audits of markdown we just wrote
+
+If there is nothing to run, **leave Test plan out entirely.**
