@@ -1,0 +1,46 @@
+# ==============================================================================
+# OS & Global IDE Noise
+# ==============================================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+
+# Code Editor caches (leaving .cursor/rules tracked implicitly)
+.vscode/
+.idea/
+*.sln
+*.csproj
+
+# ==============================================================================
+# Art Source (Blender Backups)
+# ==============================================================================
+# Blender automatically creates sequential numeric backups (.blend1, .blend2).
+# We want the master .blend files, but never these historical clones.
+art_source/**/*.blend[0-9]
+art_source/**/*.blend[0-9][0-9]
+art_source/**/*.autosave
+
+# ==============================================================================
+# Godot 4.x Sandboxes
+# ==============================================================================
+# Godot 4 stores all local compilation, texture imports, and metadata here.
+godot/**/.godot/
+
+# Prevent accidental local export binaries from slipping in
+godot/**/builds/
+
+# ==============================================================================
+# Unity Sandboxes
+# ==============================================================================
+# Ignore giant runtime caches, temporary build targets, and user layout states
+unity/**/[Ll]ibrary/
+unity/**/[Tt]emp/
+unity/**/[Oo]bj/
+unity/**/[Bb]uild/
+unity/**/[尝ogs]/
+unity/**/[Uu]ser[Ss]ettings/
+
+# Unity generated code analysis and local project scaffolding
+unity/**/DerivedData/
+unity/**/AssetBundles/
