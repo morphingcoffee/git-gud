@@ -29,7 +29,8 @@ No shared local directories. Graduated katas ship to GameLauncher through the ma
 ├── .gitignore
 ├── README.md                # Public repo overview
 ├── docs/
-│   └── PLAN.md              # This file
+│   ├── PLAN.md              # This file
+│   └── learning-log.md      # Index: active kata → per-project learning-log.md
 ├── incubator/               # Specs only — no engine projects here
 │   ├── 01_evening_news/
 │   ├── 02_under_ceiba_canopy/

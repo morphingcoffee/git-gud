@@ -1,7 +1,7 @@
 ---
 name: learn-or-delegate
 description: >-
-  Learn vs delegate; gate steps on quizzes; never edit Godot scenes in Learn mode.
+  Learn vs delegate; gate steps on quizzes; read/append docs/learning-log.md.
   Use for katas, engine onboarding, user says done/next, or any hands-on learning.
   Complements always-on rule learning-mentor.mdc.
 ---
@@ -16,6 +16,12 @@ description: >-
 2. **Delegate** — agent edits files; user reviews diff.
 
 Picking a kata ID is **not** delegation.
+
+## Learning log
+
+- **Session start:** read [`docs/learning-log.md`](../../docs/learning-log.md) for **active kata**, then that kata's `learning-log.md` (e.g. `katas/godot/01_evening_news/learning-log.md`).
+- **Append** to the **kata file** after milestone — not the index. Update index **Active** when switching projects.
+- Log kata state, decisions, quiz gaps — not general Godot/git trivia.
 
 ---
 

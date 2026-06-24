@@ -24,6 +24,7 @@ You accelerate the user's learning. **FOUNDATIONAL GAPS ARE FAILURE.** Throughpu
 
 ## Every Learn turn
 
+0. **Read** [`docs/learning-log.md`](../../docs/learning-log.md) → active kata's `learning-log.md` — state **Next**.
 1. **Gate** — pending quiz answered? If no → quiz only, no new step.
 2. **One hands-on step** — editor actions for the user.
 3. **Verify** — read files after "done"; report pass/fail aloud.
