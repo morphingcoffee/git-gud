@@ -52,19 +52,38 @@ Document the choice in the kata README (`katas/<engine>/NN_<name>/README.md`) wi
 ```text
 katas/godot/NN_<name>/
   README.md           # gym verdict + station list + level scope pointer
+  audio/              # clips reused by gym + level
   scenes/
-    gym/              # optional — one scene per station or one hub scene
-    level/            # Phase 1 MVP
+    components/       # reusable rigs (CRT bench, throw hoop, path rig, …)
+    gym/              # thin wrapper per station — instances components
+    level/            # Phase 1 MVP — same components + constraints
 ```
 
 Boot flow: dev picker (gym vs level) or separate export presets. Default **GameLauncher export = level**.
 
 ---
 
+## Gym ≠ throwaway (compose, don't redo)
+
+**Thin gym** = small debug scene around **real pieces** the level will instance later — not a parallel architecture you rip out.
+
+| Layer | Gym | Level |
+|-------|-----|-------|
+| **Component scenes** (`scenes/components/`) | Build & prove here (mesh, audio, knobs, scripts) | **Same scenes** — instance, don't rewire |
+| **Gym scene** (`scenes/gym/`) | Camera, floor, debug UI only | Stays dev-only |
+| **Level scene** (`scenes/level/`) | — | Room + validation + win state |
+| **Project-wide** | `audio/`, `default_bus_layout.tres`, bus DSP | Unchanged |
+
+**Agent:** before prescribing nodes/buses/wiring, ask the user's design stab; then compare to incubator spec. Do not front-load the spec answer and steal the layout decision.
+
+**Example (`01_evening_news`):** `components/crt_bench.tscn` (CRT mesh, `AudioStreamPlayer3D`, `Bus = Bench`, knobs later) → instanced in `gym/dsp_bench.tscn` and later `level/main.tscn`. Gym adds debug camera; level adds Subsystem B gate — not a second audio graph.
+
+---
+
 ## Build order
 
-1. **Gym stations** — prove each subsystem; visuals on; forgiving rules OK.
-2. **Level** — compose stations under spec constraints (occlusion, timers, validation gates, etc.).
+1. **Gym stations** — prove each subsystem inside **component scenes**; gym wrapper stays thin.
+2. **Level** — **instance** those components under spec constraints (occlusion, timers, validation gates, etc.).
 3. **Ship** — level export → manifest. Gym stays dev-only unless user explicitly ships it interim.
 
 When user picks a kata to start, prefer **gym first** if gym verdict is yes/thin and subsystems are not proven yet.

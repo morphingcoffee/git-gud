@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8a8swu33e1ca"]
+
+[ext_resource type="AudioStream" uid="uid://ci4pah0dqtvb7" path="res://audio/822361__denispavlovmusic__denis-pavlov_smooth-jazz-loop_80bpm.ogg" id="1_ljtm0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mpa8s"]
+
+[node name="Crt" type="Node3D" unique_id=404698326]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=122183588]
+stream = ExtResource("1_ljtm0")
+autoplay = true
+bus = &"Bench"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=365195417]
+mesh = SubResource("BoxMesh_mpa8s")

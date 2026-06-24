@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://875pjh1u6j3b"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_mpa8s"]
+[ext_resource type="PackedScene" uid="uid://b8a8swu33e1ca" path="res://scenes/components/crt.tscn" id="1_vcklj"]
 
 [node name="DspBench" type="Node3D" unique_id=349582346]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1058457801]
 transform = Transform3D(1, 0, 0, 0, 0.939256, 0.3432174, 0, -0.3432174, 0.939256, 0, 1.5, 4)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1910584802]
+[node name="CrtInstance" parent="." unique_id=365195417 instance=ExtResource("1_vcklj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
-mesh = SubResource("BoxMesh_mpa8s")
