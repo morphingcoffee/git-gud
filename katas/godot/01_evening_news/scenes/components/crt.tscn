@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b8a8swu33e1ca"]
 
 [ext_resource type="AudioStream" uid="uid://ci4pah0dqtvb7" path="res://audio/822361__denispavlovmusic__denis-pavlov_smooth-jazz-loop_80bpm.ogg" id="1_ljtm0"]
+[ext_resource type="Script" uid="uid://cdyv5ct60fchu" path="res://scenes/components/crt.gd" id="1_ty1ej"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mpa8s"]
 
 [node name="Crt" type="Node3D" unique_id=404698326]
+script = ExtResource("1_ty1ej")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=122183588]
 stream = ExtResource("1_ljtm0")
@@ -13,3 +15,30 @@ bus = &"Bench"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=365195417]
 mesh = SubResource("BoxMesh_mpa8s")
+
+[node name="BandpassSlider" type="HSlider" parent="." unique_id=1945197942]
+custom_minimum_size = Vector2(200, 0)
+offset_right = 8.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.01
+
+[node name="AmplifySlider" type="HSlider" parent="." unique_id=846360138]
+custom_minimum_size = Vector2(200, 0)
+offset_top = 17.0
+offset_right = 200.0
+offset_bottom = 33.0
+max_value = 1.0
+step = 0.01
+
+[node name="PannerSlider" type="HSlider" parent="." unique_id=759431224]
+custom_minimum_size = Vector2(200, 0)
+offset_top = 34.0
+offset_right = 200.0
+offset_bottom = 50.0
+max_value = 1.0
+step = 0.01
+
+[connection signal="value_changed" from="BandpassSlider" to="." method="_on_bandpass_value_changed"]
+[connection signal="value_changed" from="AmplifySlider" to="." method="_on_amplify_value_changed"]
+[connection signal="value_changed" from="PannerSlider" to="." method="_on_panner_value_changed"]

@@ -1,32 +1,32 @@
 # Learning log — 01 Evening News
 
-**Next:** Step **4** — gym DSP (audio bus, static feed, knobs — Subsystem A)
+**Next:** sync slider defaults from bus FX on load; then CanvasLayer for dev sliders or 3D knobs
 
 ## Done
 
 | Area | State |
 |------|--------|
-| Project shell | Godot **4.7**, Forward+. Commit `2aa3cdb`. |
-| Boot | `scenes/boot.tscn` + `ui/dev_boot_theme.tres`. Commit `c547c9a`. |
-| Themes | Quiz passed — Theme on Boot; inheritance + overrides cleared. |
-| Gym shell | `scenes/gym/dsp_bench.tscn` — `DspBench` + `Camera3D` + box placeholder. |
-| Scene switch | `scenes/boot.gd` — `GymDspBench.pressed` → `change_scene_to_file` gym. |
+| Boot + gym | boot → gym; `crt.tscn` instanced in `dsp_bench.tscn` (camera gym-only) |
+| Audio | `audio/` + attribution; `Bench` → Amplify → BandPass → Panner |
+| CRT + DSP | `crt.gd` — three 0–1 sliders → `volume_db`, `cutoff_hz`, `pan` via `_map_range` |
 
-## Not done
+## Near future (not blocking)
 
-- Level button unwired; `scenes/level/` empty
-- DSP / Subsystem A, Level Phase 1
+- **Slider init** — on load, set each HSlider from current effect value (`inverse_lerp` / `remap`) so first touch doesn’t jump.
+- **CanvasLayer** — dev sliders under `Node3D` work for now; move to gym `CanvasLayer` when polishing UI (Controls want 2D GUI layer, not 3D parent).
+- **3D knobs** — replace sliders; rotation drives same `_map_range` paths.
+- Level button; `scenes/level/`; Subsystem B.
 
 ## Decisions
 
-- Boot = 2D dev picker; gym = 3D; level = GameLauncher ship target (not boot).
-- `extends Control` on boot script matches Boot node type.
-- Mac run shortcuts: **⌘B** project, **⌘A** current scene (not F5/F6).
+- Reusable `crt.tscn`; gym = thin wrapper.
+- `cutoff_hz` not `center_hz`; clamp warning = upstream bug signal.
+- Effect lookup by index OK for single-instance Bench chain; type-scan helper optional later.
 
 ## Quiz signal
 
-- Conflated git with runtime on theme question — cleared.
-- Gym root why: Control = flat UI; gym = spatial world (camera/meshes later).
+- Bus = isolated FX chain.
+- `get_bus_effect()` → type hint for autocomplete.
 
 ---
 
