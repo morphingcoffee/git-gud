@@ -1,0 +1,9 @@
+git-gud
+Copyright 2026 morphingcoffee
+
+This development sandbox contains original gameplay prototypes, architectural 
+frameworks, and multi-engine utility code. 
+
+If you use, modify, or adapt the code or technical architecture found in this 
+repository for a public or commercial game release, attribution to the 
+original "git-gud" repository is requested under the terms of the Apache 2.0 License.
