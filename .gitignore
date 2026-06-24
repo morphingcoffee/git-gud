@@ -6,41 +6,52 @@ Thumbs.db
 *.swp
 *.log
 
-# Code Editor caches (leaving .cursor/rules tracked implicitly)
+# ==============================================================================
+# IDE & Cursor
+# ==============================================================================
 .vscode/
 .idea/
 *.sln
 *.csproj
+*.code-workspace
+
+# Cursor planning scratch (skills under .cursor/skills/ are tracked)
+.cursor_plan/
+cursor-history/
+.cursor-tasks.json
+workspace-state.json
 
 # ==============================================================================
-# Art Source (Blender Backups)
+# Art assets (Blender backups)
 # ==============================================================================
-# Blender automatically creates sequential numeric backups (.blend1, .blend2).
-# We want the master .blend files, but never these historical clones.
-art_source/**/*.blend[0-9]
-art_source/**/*.blend[0-9][0-9]
-art_source/**/*.autosave
+art_assets/**/*.blend[0-9]
+art_assets/**/*.blend[0-9][0-9]
+art_assets/**/*.autosave
 
 # ==============================================================================
-# Godot 4.x Sandboxes
+# Godot 4.x — katas/godot/
 # ==============================================================================
-# Godot 4 stores all local compilation, texture imports, and metadata here.
-godot/**/.godot/
-
-# Prevent accidental local export binaries from slipping in
-godot/**/builds/
+katas/godot/**/.godot/
+katas/godot/**/builds/
+katas/godot/**/export/
 
 # ==============================================================================
-# Unity Sandboxes
+# Unity — katas/unity/
 # ==============================================================================
-# Ignore giant runtime caches, temporary build targets, and user layout states
-unity/**/[Ll]ibrary/
-unity/**/[Tt]emp/
-unity/**/[Oo]bj/
-unity/**/[Bb]uild/
-unity/**/[尝ogs]/
-unity/**/[Uu]ser[Ss]ettings/
+katas/unity/**/[Ll]ibrary/
+katas/unity/**/[Tt]emp/
+katas/unity/**/[Oo]bj/
+katas/unity/**/[Bb]uild/
+katas/unity/**/[Ll]ogs/
+katas/unity/**/[Uu]ser[Ss]ettings/
+katas/unity/**/DerivedData/
+katas/unity/**/AssetBundles/
 
-# Unity generated code analysis and local project scaffolding
-unity/**/DerivedData/
-unity/**/AssetBundles/
+# ==============================================================================
+# Unreal Engine — katas/unrealengine/
+# ==============================================================================
+katas/unrealengine/**/Binaries/
+katas/unrealengine/**/Build/
+katas/unrealengine/**/DerivedDataCache/
+katas/unrealengine/**/Intermediate/
+katas/unrealengine/**/Saved/

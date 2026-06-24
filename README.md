@@ -9,7 +9,7 @@ A centralized sandbox repository dedicated to deliberate practice, multi-engine 
 
 Every project in this repository is a self-contained **technical kata**. The goal isn't to build sprawling, feature-crept games, but to isolate specific challenges—like audio routing, complex state logic, math tricks, or custom shaders—and package them into clean micro-prototypes.
 
-To see these pieces in action, they are built to be compiled and executed directly through the [GameLauncher](https://github.com/morphingcoffee/GameLauncher/releases) utility, using a quick exit handshake to drop back to the main menu selection.
+Finished exports are launched through the [GameLauncher](https://github.com/morphingcoffee/GameLauncher/releases) desktop app.
 
 
 ## 📊 Active Katas & Prototypes
@@ -23,12 +23,17 @@ To see these pieces in action, they are built to be compiled and executed direct
 
 ## 🏛️ Workspace Architecture
 
-To keep engines and raw assets from stepping on each other's toes, the repo uses a strict top-level layout:
+```text
+incubator/     Specs and scope gates (paper only)
+katas/         Runnable engine projects
+  godot/       Godot 4.x katas (active)
+  unity/       Reserved — no projects until Path to CoreCLR
+  unrealengine/ Reserved — not started
+art_assets/    Blender, textures, audio masters (engine-agnostic)
+docs/          Architecture notes and changelogs
+```
 
-* **`/incubator`** — The idea lab. Where the technical requirements and scope boundaries get written down before touching a line of code.
-* **`/godot`** — Sandboxes for GDScript 2.0 experiments and component-driven node setups.
-* **`/unity`** — Sandboxes for C# paradigms, low-overhead architectures, and ScriptableObject data structures.
-* **`/art_source`** — Engine-agnostic storage for raw Blender models, master `.wav` files, and project stems. Keeps heavy source assets out of the engine compilation loops.
+Agent-facing plan: [docs/PLAN.md](docs/PLAN.md).
 
 
 ## ⚡ How to Clone Partially (Sparse Checkouts)
@@ -38,7 +43,7 @@ As this repo grows, a standard `git clone` will download a ton of heavy binary a
 ### 1. Grab the Metadata Only
 Download the commit history and folder structures, but **zero** actual file contents:
 ```bash
-git clone --filter=blob:none --no-checkout [https://github.com/morphingcoffee/git-gud.git](https://github.com/morphingcoffee/git-gud.git)
+git clone --filter=blob:none --no-checkout https://github.com/morphingcoffee/git-gud.git
 cd git-gud
 ```
 
@@ -47,7 +52,7 @@ cd git-gud
 Tell Git exactly which folders you want to make visible on your local machine (e.g., pulling the incubator directory and a specific kata folder):
 
 ```bash
-git sparse-checkout set incubator/ godot/<kata-folder-name>
+git sparse-checkout set incubator/ katas/godot/03_cathode_afterglow
 ```
 
 ### 3. Pull the Trigger

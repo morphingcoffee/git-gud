@@ -1,0 +1,18 @@
+# Engine caches & exports (belt-and-suspenders with .gitignore)
+katas/**/.godot/
+katas/**/builds/
+katas/**/export/
+katas/unity/**/[Ll]ibrary/
+katas/unity/**/[Tt]emp/
+katas/unity/**/[Oo]bj/
+katas/unrealengine/**/Intermediate/
+katas/unrealengine/**/Saved/
+katas/unrealengine/**/Binaries/
+
+# Committed art masters — keep in git, out of AI context
+art_assets/blender/
+art_assets/textures/
+art_assets/audio/
+
+# Local IDE noise
+.idea/
