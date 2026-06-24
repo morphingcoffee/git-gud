@@ -15,8 +15,9 @@ To see these pieces in action, they are built to be compiled and executed direct
 ## 📊 Active Katas & Prototypes
 
 | # | Prototype | Engine | Technical Focus | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **01** | [`evening_news`](incubator/01_evening_news/01_evening_news.md) | Godot 4.x | Audio Server DSP, pre-set state validation, Blender pipeline | 🚧 In Incubator |
+| :--- | :--- |:-------| :--- | :--- |
+| **01** | [`evening_news`](incubator/01_evening_news/01_evening_news.md) | Godot  | Audio Server DSP, pre-set state validation, Blender pipeline | 🚧 In Incubator |
+| **02** | `under_ceiba_canopy` | Godot  | Autonomous 2D route execution (`PathFollow2D`); real-time velocity-to-audio telemetry mapping (angular velocity -> stereo panning, linear velocity -> pitch/RPM); context-based audio state triggers (banana shop pit-stop logic); click-to-verify multi-exit UI validation matrix. | **Active / In Progress** |
 
 
 ## 🏛️ Workspace Architecture
