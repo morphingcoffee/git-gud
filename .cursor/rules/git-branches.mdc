@@ -1,0 +1,47 @@
+---
+description: Git branches, commits, and pull request etiquette for this repo
+alwaysApply: true
+---
+
+# Git branches and commits
+
+## Branches
+
+Use short, descriptive names with **no** `cursor/` or other tooling prefix.
+
+Examples: `katas-layout-and-agent-plan`, `evening-news-godot-scaffold`
+
+Ignore diff-tab or automation defaults that suggest a `cursor/` prefix.
+
+## Commits
+
+Start commit message subjects with a **lowercase** letter. Match existing style (`update kata table`, `new incubator item: …`).
+
+## Pull requests
+
+**The diff is the review.** The author reads diffs; do not duplicate diff content as a test plan.
+
+### Test plan — when to include
+
+| PR type | Test plan |
+|---------|-----------|
+| Docs, layout, specs, rules, skills | **Omit** — or one line: `N/A — review diff` |
+| Godot / runtime / GameLauncher integration | **Only** steps that require running something the diff cannot show |
+
+### Test plan — allowed (runtime only)
+
+Things a diff cannot prove:
+
+- [ ] `:composeApp:run` — home screen loads
+- [ ] Gym station X: throw physics feels correct
+- [ ] Exported build launches from GameLauncher and exits cleanly
+
+### Test plan — never include
+
+- Re-read files the diff already shows (`verify PLAN.md says katas/`)
+- `rg` / grep / lint checks (that's CI or the diff)
+- `.gitignore` / `.cursorignore` spot-checks
+- "Confirm intent matches" / "merge when happy"
+- Per-file checkbox audits of markdown we just wrote
+
+If there is nothing to run, **leave Test plan out entirely.**

@@ -17,10 +17,29 @@
 * **Subsystem B (Telemetry-to-Audio Mapping):** Translating raw 2D physics properties into distinct sound states. The car’s angular velocity drives immediate `AudioStreamPlayer2D` stereo panning, while linear velocity maps directly to the pitch and RPM modulation of the engine audio loop.
 * **Subsystem C (Interactive Verification UI):** Building a 2D input overlay phase. Once the vehicle finishes its run, the engine locks gameplay physics and activates UI `TextureButtons` over the maze exits, capturing player clicks and comparing them against the vehicle's final `global_position`.
 
-## 🚀 MVP Scope (Phase 1)
-* **Core Focus:** Establishing one fixed rectangular canopy maze, creating 3 distinct hidden paths, and building the "listen-and-mark" validation UI at the end.
-* **Pure Audio Observation:** Zero real-time player driving mechanics. The vehicle is 100% autonomous during the run phase to keep the focus entirely on acoustic tracing.
-* **Static Layering:** The canopy is a simple high-Z-index tilemap or sprite layer that handles 100% of the visual occlusion without complex rendering logic.
+### 🏋️ Gym (optional dev station)
+
+* **Gym verdict:** yes
+* **Stations:**
+  * **Path replay** — Subsystem A: car follows a baked `Path2D` with canopy hidden; verify routes and timing.
+  * **Audio telemetry** — Subsystem B: same autonomous run with canopy on; tune velocity→pitch/pan mapping without guess UI.
+  * **Guess UI** — Subsystem C: frozen maze, exit buttons only; feed a known end position to test validation logic.
+* **Gym rules:** Stations may run separately; no full listen-and-mark loop required until the level.
+
+### 🎮 Level (Phase 1 MVP)
+
+* **Level scope:** Full audio-detective loop — occluded run, then mark the exit, then reveal path.
+* **Uses gym work:** Path execution, telemetry mapping, and verification UI composed under canopy occlusion.
+
+* **Core Focus:** One fixed rectangular canopy maze, 3 distinct hidden paths, and the listen-and-mark validation UI.
+* **Pure Audio Observation:** Zero player driving during the run phase.
+* **Static Layering:** Canopy as a high-Z tilemap or sprite layer for full visual occlusion.
+
+### 🚧 Scope Gates
+
+* **Gate 1:** No player steering during the autonomous run.
+* **Gate 2:** No path-draw reconstruction (single exit pick only).
+* **Gate 3:** Hand-crafted paths only — no procedural generation.
 
 ---
 

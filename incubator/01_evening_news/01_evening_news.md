@@ -16,10 +16,28 @@
 * **Subsystem B (State Validation Gates):** Building a strict data-separation layer where gameplay parameters are determined in a configuration menu *prior* to entering the world state, preventing players from brute-forcing the solution via real-time scrubbing.
 * **Subsystem C (Blender-to-Engine Pipeline):** Working through a clean `.gltf`/`.glb` material derivation export loop from Blender into Godot 4, establishing a reusable workflow for high-end static mesh assets.
 
-## 🚀 MVP Scope (Phase 1)
-* **Core Focus:** 100% of the initial velocity goes into the Audio Server DSP routing, the pre-set initialization logic, and the viewport/raycast input interaction.
-* **Static Presentation:** All environmental and character meshes (the CRT TV, the room layout) will remain static, un-rigged assets exported from Blender to keep the initial build completely un-bloated.
-* **Single Matrix Loop:** The module launches with exactly one distinct frequency-and-panning coordinate set to solve.
+### 🏋️ Gym (optional dev station)
+
+* **Gym verdict:** thin
+* **Stations:**
+  * **DSP bench** — Subsystem A: knobs drive amplify, band-pass, and panner on a live static feed; hear the filter chain respond in real time.
+  * **Asset check** (optional) — Subsystem C: CRT and room meshes from Blender; verify import, materials, and scale only.
+* **Gym rules:** No pre-set validation gate; target coordinates may show in a debug readout; puzzle win state disabled.
+
+### 🎮 Level (Phase 1 MVP)
+
+* **Level scope:** One coherent tuning puzzle — the hook, payoff, and exit state above.
+* **Uses gym work:** DSP routing and knob interaction from the gym bench; adds Subsystem B (pre-set initialization) and the single solve matrix.
+
+* **Core Focus:** Audio Server DSP routing, pre-set initialization logic, and viewport/raycast input interaction.
+* **Static Presentation:** CRT and room as static Blender exports; un-rigged.
+* **Single Matrix Loop:** Exactly one distinct frequency-and-panning coordinate set to solve.
+
+### 🚧 Scope Gates
+
+* **Gate 1:** No real-time brute-force scrubbing — puzzle parameters are fixed before the world state.
+* **Gate 2:** No animation or rigged characters in Phase 1.
+* **Gate 3:** One puzzle matrix only — no procedural signal generation.
 
 ---
 
