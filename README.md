@@ -9,7 +9,7 @@ A centralized sandbox repository dedicated to deliberate practice, multi-engine 
 
 Every project in this repository is a self-contained **technical kata**. The goal isn't to build sprawling, feature-crept games, but to isolate specific challenges—like audio routing, complex state logic, math tricks, or custom shaders—and package them into clean micro-prototypes.
 
-To see these pieces in action, they are built to be compiled and executed directly through the [GameLauncher](https://github.com/morphingcoffee/GameLauncher) utility, using a quick exit handshake to drop back to the main menu selection.
+To see these pieces in action, they are built to be compiled and executed directly through the [GameLauncher](https://github.com/morphingcoffee/GameLauncher/releases) utility, using a quick exit handshake to drop back to the main menu selection.
 
 
 ## 📊 Active Katas & Prototypes
