@@ -16,7 +16,7 @@ To see these pieces in action, they are built to be compiled and executed direct
 
 | # | Prototype | Engine | Technical Focus | Status |
 | :--- | :--- | :--- | :--- | :--- |
-
+| **01** | [`evening_news`](incubator/01_evening_news/01_evening_news.md) | Godot 4.x | Audio Server DSP, pre-set state validation, Blender pipeline | 🚧 In Incubator |
 
 
 ## 🏛️ Workspace Architecture
