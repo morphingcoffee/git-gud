@@ -17,8 +17,31 @@
 * **Subsystem B:** [e.g., Run-time path-buffering via Vector2 arrays]
 * **Subsystem C:** [e.g., Viewport/CanvasLayer rendering isolation]
 
+### 🏋️ Gym (optional dev station)
+*Per-kata mechanic lab — unpolished, isolated drills. Skip if the loop is inseparable.*
+
+* **Gym verdict:** [yes / thin / skip]
+* **Stations:** [List what each gym scene lets you try — map from Subsystems A/B/C]
+* **Gym rules:** [What constraints are relaxed vs the level — e.g. visuals on, no timer]
+
+### 🎮 Level (Phase 1 MVP)
+*The composed experience that ships to GameLauncher.*
+
+* **Level scope:** [Same as MVP Scope below — one coherent loop with real constraints]
+* **Uses gym work:** [Which proven subsystems get composed here]
+
+## 🚀 MVP Scope (Phase 1)
+* **Core Focus:** [What 100% of initial velocity targets]
+* **Static Presentation / constraints:** [Art and scope limits]
+* **Single Matrix Loop:** [One scenario / one win condition]
+
 ### 🚧 Scope Gates
 *What are we explicitly NOT building or learning here? This is your shield against feature creep.*
 * **Gate 1:** [e.g., No physics-based collision resolution—use pure vector distance checks instead]
 * **Gate 2:** [e.g., No multi-level progression systems—one single hardcoded scenario only]
 * **Gate 3:** [e.g., No custom UI or main menus—game starts instantly on launch]
+
+---
+
+## 📡 Future Expansions (Backlog)
+*Phase 2+ only — not gym, not Phase 1 level.*

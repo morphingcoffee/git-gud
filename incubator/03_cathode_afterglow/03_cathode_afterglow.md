@@ -19,9 +19,28 @@
 * **Subsystem B (Spatial Audio Collision Matrix):** Setting up distinct `Area3D` detection zones on hidden static colliders (Backboard, Metallic Rim, Nylon Net, Environment Floor). Mapping these boundaries to individual `AudioStreamPlayer3D` emitters playing material-specific, high-fidelity audio samples. The engine utilizes Godot's built-in distance attenuation and panning models to translate missed shots into precise structural data.
 * **Subsystem C (Session Control & State Management):** Creating an ironclad 90-second game loop manager using a standard asynchronous state machine. This manages transitions cleanly between the pre-game idle state, active match ticking, score increments, and the end-of-session interaction freeze.
 
-## 🚀 MVP Scope (Phase 1)
-* **Core Focus:** Establishing a rock-solid 3D physics throwing sandbox, configuring perfect spatial acoustics for 4 core collision types (backboard thud, rim ping, net swish, floor roll), and writing the 90-second timer/score tracking engine.
-* **Visual Isolation:** The 3D environment layout is built using primitive geometric shapes with zero advanced texturing. The environment is kept heavily shadowed, relying primarily on an active `OmniLight3D` or `SpotLight3D` component embedded within a 3D Text or Sprite3D node representing the glowing red LED scoreboard to cast faint, low-intensity specular reflections across nearby target geometries.
+### 🏋️ Gym (optional dev station)
+
+* **Gym verdict:** yes
+* **Stations:**
+  * **Throw range** — Subsystem A: drag-and-release impulses on `RigidBody3D`; court lit, no score pressure.
+  * **Collision audio** — Subsystem B: backboard, rim, net, and floor hits in isolation; full lighting, trigger shots or fixed spawn positions.
+  * **Session HUD** — Subsystem C: timer, score increment, and end-of-run freeze without visual blackout.
+* **Gym rules:** Lighting on; 90s timer optional or disabled; no atmospheric shadow gameplay.
+
+### 🎮 Level (Phase 1 MVP)
+
+* **Level scope:** Full cathode-afterglow loop — compromised vision, acoustic calibration, 90-second scored session, then quit.
+* **Uses gym work:** Throw feel, spatial audio matrix, and session state machine composed under visual isolation.
+
+* **Core Focus:** 3D throw sandbox, spatial acoustics for 4 collision types, 90-second timer/score tracking.
+* **Visual Isolation:** Primitive court geometry; heavy shadow; faint red scoreboard glow as primary specular cue.
+
+### 🚧 Scope Gates
+
+* **Gate 1:** No dynamic ball weights or reverb profiles in Phase 1.
+* **Gate 2:** No flickering neon sign or extra visual disruption systems.
+* **Gate 3:** One court layout — no mode variants or progression tiers.
 
 ---
 

@@ -23,7 +23,7 @@ No shared local directories. Graduated katas ship to GameLauncher through the ma
 ```text
 /
 ├── .cursor/
-│   └── skills/              # Committed agent skills (e.g. github-gh-cli)
+│   └── skills/              # Agent skills (github-gh-cli, kata-gym-level, …)
 ├── .cursorrules             # Public Cursor persona (not created yet)
 ├── .gitignore
 ├── README.md                # Public repo overview
@@ -46,7 +46,20 @@ No shared local directories. Graduated katas ship to GameLauncher through the ma
 
 **Why `katas/` at the root:** keeps `incubator/` (paper) separate from `katas/` (code). Matches the repo philosophy — each folder is a technical drill, not a production game.
 
-**Graduation path:** `incubator/NN_name/` spec → `katas/<engine>/NN_name/` project → desktop export → GameLauncher manifest entry.
+**Graduation path:** `incubator/NN_name/` spec → `katas/<engine>/NN_name/` project (gym + level per [kata-gym-level skill](../.cursor/skills/kata-gym-level/SKILL.md)) → **level** desktop export → GameLauncher manifest entry.
+
+---
+
+## Gym and level
+
+Each kata may include:
+
+- **Gym** — optional dev station; isolated mechanics from the spec's subsystems (unpolished).
+- **Level** — incubator Phase 1 MVP; the composed experience.
+
+Decide gym scope per kata before implementation. Every work session should be explicit: **gym or level**. Full workflow: [`.cursor/skills/kata-gym-level/SKILL.md`](../.cursor/skills/kata-gym-level/SKILL.md).
+
+Ship **level** to GameLauncher by default. Ship **gym** only if no level exists yet (same idea as GameLauncher's `arcade_gym`).
 
 ---
 
@@ -66,9 +79,11 @@ Which kata graduates first is **user's choice** — no default ordering beyond t
 
 When a kata is export-ready:
 
-1. Desktop export (Windows and/or macOS) with a stable `executable_path` inside the zip layout GameLauncher expects.
+1. Desktop export of the **level** (Windows and/or macOS) with a stable `executable_path` inside the zip layout GameLauncher expects.
 2. Register in `GameLauncher/manifests/` and deploy via existing R2 pipeline.
 3. Confirm launch from an installed GameLauncher build — process starts, player quits, launcher regains focus.
+
+Gym-only export is acceptable only as an interim catalog entry when the level does not exist yet.
 
 Do not block shipping on score telemetry, result JSON, or custom CLI flags.
 
@@ -134,4 +149,4 @@ Promote this block to root `.cursorrules` when the first kata lands in `katas/`.
 
 - **Done:** three incubator specs, `katas/` structure (godot / unity / unrealengine), `art_assets/` stubs, `github-gh-cli` skill, this plan.
 - **Not started:** all `katas/<engine>/*` projects, `.cursorrules`, `art_assets` content, GameLauncher manifest entries for git-gud katas.
-- **Next:** user picks which incubator spec to graduate — scaffold `katas/<engine>/NN_<name>/` and implement that spec's Phase 1 MVP.
+- **Next:** user picks which incubator spec to graduate — plan gym/level, then scaffold `katas/<engine>/NN_<name>/`.
