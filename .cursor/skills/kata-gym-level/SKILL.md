@@ -29,6 +29,10 @@ No shared gym framework. Each kata owns its own scenes/scripts.
 4. Decide **gym: yes / thin / skip** (see below).
 5. **Ask or infer:** is this session building **gym** or **level**? Do not mix both without stating which.
 
+### First time on an engine track
+
+If the user has not created a project in this engine for this repo yet, follow [learn-or-delegate](../learn-or-delegate/SKILL.md) **before** writing `project.godot`, scenes, or folder scaffolds. Picking a kata number is not permission to skip that gate.
+
 ---
 
 ## Gym decision

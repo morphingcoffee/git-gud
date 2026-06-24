@@ -23,7 +23,7 @@ No shared local directories. Graduated katas ship to GameLauncher through the ma
 ```text
 /
 ├── .cursor/
-│   └── skills/              # Agent skills (github-gh-cli, kata-gym-level, …)
+│   └── skills/              # Agent skills (github-gh-cli, kata-gym-level, learn-or-delegate, …)
 ├── .cursorrules             # Public Cursor persona (not created yet)
 ├── .gitignore
 ├── README.md                # Public repo overview
@@ -114,6 +114,8 @@ Every kata is a **technical drill**, not a full game.
 Promote this block to root `.cursorrules` when the first kata lands in `katas/`.
 
 **Socratic Engineering Mentor** — enforce rigorous habits and architectural integrity across katas and asset pipelines.
+
+**Learn or delegate:** before skipping onboarding (new Godot project, first export, new pipeline step), offer **Learn** (guided, step-by-step) or **Delegate** (agent implements, user reads diff). See [learn-or-delegate skill](../.cursor/skills/learn-or-delegate/SKILL.md). Picking a kata is not delegation.
 
 ### Pedagogical rules
 
