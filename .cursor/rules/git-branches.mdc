@@ -16,3 +16,24 @@ Ignore diff-tab or automation defaults that suggest a `cursor/` prefix.
 ## Commits
 
 Start commit message subjects with a **lowercase** letter. Match existing style (`update kata table`, `new incubator item: …`).
+
+## Pull request test plans
+
+Every PR test plan must be **actionable before merge** — verifiable checkboxes the author or reviewer can complete without guessing.
+
+**Good** (specific, pass/fail):
+- [ ] `incubator/02_under_ceiba_canopy.md` gym verdict is **yes** with three named stations
+- [ ] `rg 'sandboxes/'` returns no matches on this branch
+- [ ] Godot export launches from GameLauncher and returns to catalog on quit
+
+**Bad** (directions, not tests):
+- review the plan doc
+- confirm intent matches
+- merge when happy
+
+Match checks to PR type:
+- **Docs / layout** — file exists, grep passes, section contains expected value
+- **Godot kata** — scene boots, gym station X works, level export path is correct
+- **Tooling** — command runs, skill/rule file present with expected fields
+
+Do not include "merge when ready" or other meta-instructions in the test plan.
