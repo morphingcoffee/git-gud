@@ -9,9 +9,20 @@ alwaysApply: true
 
 Use short, descriptive names with **no** `cursor/` or other tooling prefix.
 
-Examples: `katas-layout-and-agent-plan`, `evening-news-godot-scaffold`
+**One branch per workstream** — not one per commit or skill tweak. Kata work (Godot scenes, gym/level, related skill/rule updates) stays on the same branch until that workstream merges. Example: all `01_evening_news` work on `01-evening-news`.
+
+Examples: `01-evening-news`, `02-under-ceiba-canopy`, `katas-layout-and-agent-plan`
 
 Ignore diff-tab or automation defaults that suggest a `cursor/` prefix.
+
+### After a PR merges
+
+1. `git checkout main && git pull`
+2. `git branch -d <branch>` — delete local workstream branch
+3. `git push origin --delete <branch>` — delete remote if it was pushed
+4. `git fetch --prune` — drop stale remote-tracking refs
+
+Ask the agent: *"PR #N merged — clean up branches"* to run this. You merge on GitHub (or ask agent to `gh pr merge`); cleanup is separate and quick.
 
 ## Commits
 
@@ -32,9 +43,8 @@ Start commit message subjects with a **lowercase** letter. Match existing style 
 
 Things a diff cannot prove:
 
-- [ ] `:composeApp:run` — home screen loads
-- [ ] Gym station X: throw physics feels correct
-- [ ] Exported build launches from GameLauncher and exits cleanly
+- [ ] Godot F5 — gym DSP bench scene runs, knobs affect the audio bus
+- [ ] Desktop export launches from GameLauncher and exits cleanly
 
 ### Test plan — never include
 
